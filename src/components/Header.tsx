@@ -22,7 +22,7 @@ export function Header() {
         </span>
         <span className="brand-name">Cubic Calculator</span>
       </Link>
-      <nav className="site-nav" aria-label="Calculators">
+      <nav className="site-nav" aria-label="Calculators" data-nosnippet="">
         {showToolNav
           ? toolNavItems.map((item) => (
               <Link className="tool-link" href={item.href} key={item.href}>

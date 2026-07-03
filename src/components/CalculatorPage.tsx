@@ -5,6 +5,8 @@ import type { SeoPageKey } from "./SeoContent";
 import { CalculatorLayout } from "./CalculatorLayout";
 import { HowToUsePanel } from "./HowToUsePanel";
 import { SeoContent } from "./SeoContent";
+import { StructuredData } from "./StructuredData";
+import { createCalculatorStructuredData } from "@/lib/structured-data";
 
 interface CalculatorPageProps {
   scene: SceneType;
@@ -19,11 +21,23 @@ export function CalculatorPage({ scene, seoPage, currentPath, title, description
 
   return (
     <main>
+      <StructuredData
+        data={createCalculatorStructuredData({
+          title,
+          description,
+          path: currentPath,
+        })}
+      />
       <CalculatorLayout scene={scene} title={title} description={description} />
-      <section className="calculator-links" id="calculator-links" aria-label="Related calculators">
+      <section
+        className="calculator-links"
+        id="calculator-links"
+        aria-label="Related calculators"
+        data-nosnippet=""
+      >
         <div className="calculator-links-head">
           <p className="eyebrow">Related calculators</p>
-          <h2>Open a focused calculator when the main keyword changes.</h2>
+          <h2>Choose a calculator for the measurement you need.</h2>
         </div>
         <div className="calculator-link-grid">
           {otherCalculators.map((item) => (

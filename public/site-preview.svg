@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Cubic Calculator preview">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="cubeA" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#7dd3fc"/>
+      <stop offset="1" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="64" y="58" width="1072" height="514" rx="34" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="116" y="140" fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="800">Cubic Calculator</text>
+  <text x="116" y="194" fill="#475569" font-family="Inter, Arial, sans-serif" font-size="28">Volume, CBM, concrete, room, tank, and soil calculators</text>
+  <g transform="translate(120 250)">
+    <rect width="438" height="230" rx="24" fill="#f8fafc" stroke="#dbe4ef"/>
+    <text x="34" y="62" fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Live result</text>
+    <text x="34" y="122" fill="#0284c7" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="800">2.40 m³</text>
+    <text x="34" y="170" fill="#475569" font-family="Inter, Arial, sans-serif" font-size="22">Length × width × height</text>
+    <text x="34" y="205" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="20">Convert to ft³, yd³, liters, or gallons</text>
+  </g>
+  <g transform="translate(690 160)">
+    <path d="M170 0 330 92v184l-160 92L10 276V92L170 0Z" fill="url(#cubeA)"/>
+    <path d="M170 0v184L10 92 170 0Z" fill="#93c5fd" opacity=".95"/>
+    <path d="M170 184v184L10 276V92l160 92Z" fill="#22c55e" opacity=".94"/>
+    <path d="M170 184 330 92v184l-160 92V184Z" fill="#14b8a6" opacity=".96"/>
+    <path d="M87 249h166M170 78v225" stroke="#ffffff" stroke-width="12" stroke-linecap="round" opacity=".92"/>
+  </g>
+  <g fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">
+    <text x="708" y="520">Boxes</text>
+    <text x="806" y="520">Cylinders</text>
+    <text x="940" y="520">Materials</text>
+  </g>
+</svg>

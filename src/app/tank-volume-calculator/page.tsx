@@ -3,7 +3,7 @@ import { CalculatorPage } from "@/components/CalculatorPage";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Tank Volume Calculator",
+  title: "Tank Volume Calculator for Cylinders & Liquid Capacity",
   description:
     "Use this tank volume calculator to calculate full tank volume from vessel dimensions and shape.",
   path: "/tank-volume-calculator",

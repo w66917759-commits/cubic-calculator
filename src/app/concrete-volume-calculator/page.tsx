@@ -3,7 +3,7 @@ import { CalculatorPage } from "@/components/CalculatorPage";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Concrete Volume Calculator",
+  title: "Concrete Volume Calculator for Slabs, Footings & Voids",
   description:
     "Use this concrete volume calculator to calculate concrete quantity from dimensions, voids, and waste.",
   path: "/concrete-volume-calculator",

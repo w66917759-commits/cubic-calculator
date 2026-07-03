@@ -3,7 +3,7 @@ import { CalculatorPage } from "@/components/CalculatorPage";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "CBM Calculator",
+  title: "CBM Calculator for Shipping Cartons & Freight",
   description:
     "Use this CBM calculator to calculate cubic meter freight volume from carton dimensions and quantity.",
   path: "/cbm-calculator",

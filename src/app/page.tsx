@@ -3,9 +3,9 @@ import { CalculatorPage } from "@/components/CalculatorPage";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Volume Calculator",
+  title: "Volume Calculator for Boxes, Rooms & Materials",
   description:
-    "Use this volume calculator to calculate volume from dimensions, shapes, units, and project settings.",
+    "Calculate volume for boxes, rooms, tanks, soil, concrete, freight, and mixed shapes with unit conversions.",
   path: "/",
 });
 

@@ -12,6 +12,13 @@ export function createPageMetadata({
   description,
   path,
 }: PageMetadataInput): Metadata {
+  const image = {
+    url: SITE.imagePath,
+    width: 1200,
+    height: 630,
+    alt: SITE.imageAlt,
+  };
+
   return {
     title,
     description,
@@ -24,11 +31,13 @@ export function createPageMetadata({
       url: path,
       siteName: SITE.name,
       type: "website",
+      images: [image],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title,
       description,
+      images: [SITE.imagePath],
     },
   };
 }

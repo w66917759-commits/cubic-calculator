@@ -3,7 +3,7 @@ import { CalculatorPage } from "@/components/CalculatorPage";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Cubic Yard Calculator",
+  title: "Cubic Yard Calculator for Soil, Concrete & Mulch",
   description:
     "Use this cubic yard calculator to calculate yd3 from length, width, depth, and material dimensions.",
   path: "/cubic-yard-calculator",

@@ -3,7 +3,7 @@ import { CalculatorPage } from "@/components/CalculatorPage";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Room Volume Calculator",
+  title: "Room Volume Calculator for Air, Storage & Layouts",
   description:
     "Use this room volume calculator to calculate room volume from length, width, height, and layout dimensions.",
   path: "/room-volume-calculator",

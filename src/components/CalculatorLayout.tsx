@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { RotateCcw } from "lucide-react";
 import { CURRENCIES, MATERIALS, VOLUME_UNITS } from "@/lib/calculator/constants";
@@ -14,9 +15,16 @@ import type {
   VolumeUnit,
 } from "@/lib/calculator/types";
 import { ComponentEditor } from "./ComponentEditor";
-import { DynamicProjectModel } from "./DynamicProjectModel";
 import { ResultsPanel } from "./ResultsPanel";
 import { VolumeConverter } from "./VolumeConverter";
+
+const DynamicProjectModel = dynamic(
+  () => import("./DynamicProjectModel").then((module) => module.DynamicProjectModel),
+  {
+    ssr: false,
+    loading: () => <ModelPlaceholder status="Loading 3D model" />,
+  },
+);
 
 interface CalculatorLayoutProps {
   scene: SceneType;
@@ -24,10 +32,52 @@ interface CalculatorLayoutProps {
   description: string;
 }
 
+interface ModelPlaceholderProps {
+  project?: CalculatorProject;
+  selectedComponentId?: string;
+  status?: string;
+  onLoad?: () => void;
+}
+
+function ModelPlaceholder({ project, selectedComponentId, status, onLoad }: ModelPlaceholderProps) {
+  const selectedComponent = project?.components.find((component) => component.id === selectedComponentId);
+  const shapeCount = project?.components.length ?? 1;
+
+  return (
+    <figure className="model-stage model-stage-placeholder" aria-label="3D project model">
+      <div className="model-placeholder-panel">
+        <span className="model-placeholder-mark" aria-hidden>
+          3D
+        </span>
+        <div>
+          <h2>{status ?? "3D model"}</h2>
+          <p>
+            {selectedComponent?.name ?? "Project shape"} · {shapeCount} component
+            {shapeCount === 1 ? "" : "s"}
+          </p>
+        </div>
+        {onLoad ? (
+          <button className="ghost-button model-load-button" type="button" onClick={onLoad}>
+            Load 3D model
+          </button>
+        ) : null}
+      </div>
+      <figcaption className="model-stage-caption">
+        <span className="model-stage-live">
+          <span className="live-dot" aria-hidden />
+          Preview
+        </span>
+        <span className="model-stage-shape">{selectedComponent?.name ?? "Ready"}</span>
+      </figcaption>
+    </figure>
+  );
+}
+
 export function CalculatorLayout({ scene, title, description }: CalculatorLayoutProps) {
   const [project, setProject] = useState<CalculatorProject>(() => cloneProject(scene));
   const [activeComponentId, setActiveComponentId] = useState("component-1");
   const [stateMessage, setStateMessage] = useState("");
+  const [showModel, setShowModel] = useState(false);
   const restoredRef = useRef(false);
   const result = useMemo(() => calculateProject(project), [project]);
   const cost = project.cost ?? {
@@ -110,14 +160,22 @@ export function CalculatorLayout({ scene, title, description }: CalculatorLayout
       ) : null}
 
       <div className="workbench-stack">
-        <section className="visual-stage" aria-label="Live 3D model and result">
+        <section className="visual-stage" aria-label="Live 3D model and result" data-nosnippet="">
           <div className="model-card">
-            <DynamicProjectModel project={project} selectedComponentId={selectedComponentId} />
+            {showModel ? (
+              <DynamicProjectModel project={project} selectedComponentId={selectedComponentId} />
+            ) : (
+              <ModelPlaceholder
+                project={project}
+                selectedComponentId={selectedComponentId}
+                onLoad={() => setShowModel(true)}
+              />
+            )}
           </div>
           <ResultsPanel project={project} result={result} />
         </section>
 
-        <div className="work-input">
+        <div className="work-input" data-nosnippet="">
           <ComponentEditor
             project={project}
             result={result}

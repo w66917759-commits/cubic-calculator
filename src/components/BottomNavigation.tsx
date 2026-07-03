@@ -32,7 +32,7 @@ export function BottomNavigation() {
   const showToolNav = isCalculatorPath(pathname);
 
   return (
-    <footer className="bottom-navigation">
+    <footer className="bottom-navigation" data-nosnippet="">
       <nav className="bottom-navigation-inner" aria-label="Bottom navigation">
         <div className="bottom-navigation-group" aria-label="Calculators">
           {showToolNav

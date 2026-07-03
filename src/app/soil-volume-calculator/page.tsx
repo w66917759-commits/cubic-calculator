@@ -3,7 +3,7 @@ import { CalculatorPage } from "@/components/CalculatorPage";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Soil Calculator",
+  title: "Soil Calculator for Garden Beds, Planters & Mulch",
   description:
     "Use this soil calculator to calculate soil quantity from bed, planter, trench, or mound dimensions.",
   path: "/soil-volume-calculator",

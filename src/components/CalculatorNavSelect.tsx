@@ -18,7 +18,7 @@ export function CalculatorNavSelect({ className = "", label = "Calculator" }: Ca
   const activeHref = getActiveCalculator(pathname);
 
   return (
-    <label className={`calculator-nav-select ${className}`.trim()}>
+    <label className={`calculator-nav-select ${className}`.trim()} data-nosnippet="">
       <span>{label}</span>
       <select
         aria-label="Choose calculator"

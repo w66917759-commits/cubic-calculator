@@ -3,7 +3,7 @@ import { CalculatorPage } from "@/components/CalculatorPage";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Cubic Feet Calculator",
+  title: "Cubic Feet Calculator for Feet, Inches & Rooms",
   description:
     "Use this cubic feet calculator to calculate ft3 from length, width, height, quantity, and shape inputs.",
   path: "/cubic-feet-calculator",

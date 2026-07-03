@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cubic Calculator">
+  <rect width="64" height="64" rx="14" fill="#17324d"/>
+  <path d="M32 10 50 20.5v21L32 52 14 41.5v-21L32 10Z" fill="#42d392"/>
+  <path d="M32 10v21L14 20.5 32 10Z" fill="#7dd3fc"/>
+  <path d="M32 31v21L14 41.5v-21L32 31Z" fill="#22c55e"/>
+  <path d="M32 31 50 20.5v21L32 52V31Z" fill="#14b8a6"/>
+  <path d="M22 39h20M32 18v28" stroke="#f8fafc" stroke-width="4" stroke-linecap="round" opacity=".95"/>
+</svg>
